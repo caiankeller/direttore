@@ -1,0 +1,56 @@
+{
+  "name": "@direttore/core",
+  "version": "0.1.0-alpha.1",
+  "description": "Zero-dependency API orchestration primitives for TypeScript applications.",
+  "author": "Caian Keller",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiankeller/direttore.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/caiankeller/direttore",
+  "bugs": {
+    "url": "https://github.com/caiankeller/direttore/issues"
+  },
+  "keywords": [
+    "api",
+    "frontend",
+    "orchestration",
+    "fetch",
+    "auth",
+    "errors"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "pack:dry-run": "npm pack --dry-run",
+    "prepack": "npm run typecheck && npm test && npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
