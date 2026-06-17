@@ -17,3 +17,8 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+
+package-lock.json
+bun.lock
+
+/packages/core/examples

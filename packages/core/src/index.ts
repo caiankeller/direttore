@@ -2,21 +2,25 @@ export {
   endpoint,
   createApiClient,
   createEndpoint,
-  defaultClientConfig,
+  defineEndpoint,
+  defineService,
 } from "./endpoint";
 export {
   ApiError,
+  HttpResponseError,
 } from "./errors";
 export { SchemaValidationError } from "./schema";
 export type { SchemaValidationPhase } from "./schema";
-export { logger, retry, withHeaders } from "./middleware";
+export { logger, withHeaders } from "./middleware";
 export type {
   ApiClient,
   ApiClientConfig,
   ApiErrorInit,
   ApiHandlerResult,
+  ApiServiceDefinition,
+  ApiServiceDefinitionConfig,
+  ApiServiceDefinitionMap,
   ApiServiceConfig,
-  ApiServicesConfig,
   ApiStatusHandler,
   ApiStatusHandlerContext,
   ApiStatusHandlerResult,
@@ -29,9 +33,11 @@ export type {
   BodyFactory,
   Endpoint,
   EndpointCacheKey,
-  EndpointCacheKeyFactory,
+  EndpointDefinition,
+  EndpointKeyFactory,
   EndpointConfig,
   EndpointError,
+  EndpointErrorResponseParser,
   EndpointFetchOptions,
   EndpointInput,
   EndpointMiddleware,
@@ -39,12 +45,16 @@ export type {
   EndpointRequest,
   EndpointRequestContext,
   EndpointRequestHandler,
+  EndpointRequestInit,
   EndpointResponse,
   EndpointResponseParser,
   EndpointResponseTransformer,
   HeaderFactory,
   HttpMethod,
+  MountedApiServices,
   NormalizedApiError,
   QueryFactory,
   SchemaLike,
+  ServiceEndpointConfig,
+  ServiceEndpointDefinitions,
 } from "./types";

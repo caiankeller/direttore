@@ -1,55 +1,24 @@
 {
-  "name": "direttore",
+  "name": "direttore-workspace",
   "version": "0.1.0-alpha.1",
-  "description": "Zero-dependency API orchestration primitives for TypeScript applications.",
-  "author": "Caian Keller",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caiankeller/direttore.git"
-  },
-  "homepage": "https://github.com/caiankeller/direttore",
-  "bugs": {
-    "url": "https://github.com/caiankeller/direttore/issues"
-  },
-  "keywords": [
-    "api",
-    "frontend",
-    "orchestration",
-    "fetch",
-    "auth",
-    "errors"
-  ],
+  "private": true,
+  "description": "Workspace for the Direttore package family.",
   "type": "module",
-  "sideEffects": false,
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
+  "workspaces": [
+    "packages/*"
   ],
-  "publishConfig": {
-    "tag": "alpha"
-  },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
-    "pack:dry-run": "npm pack --dry-run",
-    "prepack": "npm run typecheck && npm test && npm run build",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit"
-  },
-  "engines": {
-    "node": ">=18.17"
+    "build": "npm run build --workspaces --if-present",
+    "build:core": "npm run build -w @direttore/core",
+    "build:react-query": "npm run build -w @direttore/react-query",
+    "pack:core": "npm run pack:dry-run -w @direttore/core",
+    "pack:react-query": "npm run pack:dry-run -w @direttore/react-query",
+    "test": "npm test --workspaces --if-present",
+    "test:core": "npm test -w @direttore/core",
+    "test:react-query": "npm test -w @direttore/react-query",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "typecheck:core": "npm run typecheck -w @direttore/core",
+    "typecheck:react-query": "npm run typecheck -w @direttore/react-query"
   },
   "devDependencies": {
     "@types/node": "^25.0.0",

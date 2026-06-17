@@ -5,19 +5,10 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-    "baseUrl": ".",
-    "paths": {
-      "direttore": ["src/index.ts"]
-    },
-    "types": ["node", "vitest/globals"]
-  },
-  "include": ["src", "test", "examples"]
+    "verbatimModuleSyntax": true
+  }
 }
