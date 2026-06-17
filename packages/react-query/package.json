@@ -1,6 +1,6 @@
 {
   "name": "@direttore/react-query",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "TanStack React Query adapter for Direttore API endpoints.",
   "author": "Caian Keller",
   "license": "MIT",
@@ -52,7 +52,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@direttore/core": "0.1.0-alpha.1"
+    "@direttore/core": "0.1.0-alpha.2"
   },
   "peerDependencies": {
     "@tanstack/react-query": "^5.0.0",
